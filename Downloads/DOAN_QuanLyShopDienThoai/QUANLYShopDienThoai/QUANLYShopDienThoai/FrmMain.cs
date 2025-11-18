@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,18 @@ using System.Windows.Forms;
 
 namespace QUANLYShopDienThoai
 {
-    public partial class FrmMain : Form
+    public partial class FrmMain : MaterialSkin.Controls.MaterialForm
     {
         public FrmMain()
         {
             InitializeComponent();
             this.Load += FrmMain_Load;
+            var skin = MaterialSkin.MaterialSkinManager.Instance;
+            skin.AddFormToManage(this);
+            skin.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;   
+            skin.ColorScheme = new ColorScheme(
+                Primary.Indigo600, Primary.Indigo700, Primary.Indigo100,
+                Accent.LightBlue200, TextShade.WHITE);
         }
 
 

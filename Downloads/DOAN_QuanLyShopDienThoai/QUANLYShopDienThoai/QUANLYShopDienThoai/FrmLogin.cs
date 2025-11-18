@@ -4,11 +4,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using QUANLYShopDienThoai;
+using MaterialSkin;                  
+using MaterialSkin.Controls;
 
 namespace QUANLYShopDienThoai
 {
     
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MaterialSkin.Controls.MaterialForm
     {
        
         private const string connectionString = @"Server=localhost\SQLEXPRESS01;Database=QUANLYDIENTHOAI;User Id=sa;Password=123456;TrustServerCertificate=True;";
@@ -16,7 +18,17 @@ namespace QUANLYShopDienThoai
         public FrmLogin()
         {
             InitializeComponent();
-            txtMatKhau.PasswordChar = '*';
+            
+            var skin = MaterialSkin.MaterialSkinManager.Instance;
+            skin.AddFormToManage(this);
+            skin.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;  
+            skin.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.Indigo500,
+                MaterialSkin.Primary.Indigo700,
+                MaterialSkin.Primary.Indigo100,
+                MaterialSkin.Accent.Pink200,
+                MaterialSkin.TextShade.WHITE
+            );
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -36,9 +48,11 @@ namespace QUANLYShopDienThoai
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                   
-                    command.Parameters.AddWithValue("@user", taiKhoan);
-                    command.Parameters.AddWithValue("@pass", matKhau);
+
+                    
+                    command.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = taiKhoan;
+                    command.Parameters.Add("@pass", SqlDbType.VarChar, 50).Value = matKhau;
+
 
                     try
                     {
@@ -53,7 +67,7 @@ namespace QUANLYShopDienThoai
                             CurrentUser.Role = reader.GetString(2);
                             CurrentUser.IsLoggedIn = true;
 
-                            MessageBox.Show($"Đăng nhập thành công! Chào mừng {CurrentUser.TenNV} ({CurrentUser.Role}).", "Thông báo");
+                            MessageBox.Show($"Đăng nhập thành công! Chào mừng {CurrentUser.TenNV} .", "Thông báo");
 
                            
                             FrmMain mainForm = new FrmMain();
@@ -71,6 +85,8 @@ namespace QUANLYShopDienThoai
                     }
                 }
             }
+            //MessageBox.Show($"TK: [{txtTaiKhoan.Text}] | MK: [{txtMatKhau.Text}]");
+            //return; 
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

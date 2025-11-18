@@ -9,3 +9,16 @@ C:\Users\Admin\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShop
 C:\Users\Admin\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmLogin.resources
 C:\Users\Admin\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.exe
 C:\Users\Admin\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.pdb
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.exe.config
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.exe
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.pdb
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\MaterialSkin.dll
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmLogin.resources
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmMain.resources
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.Properties.Resources.resources
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.GenerateResource.cache
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYSh.3FA21CCA.Up2Date
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.exe
+C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.pdb
