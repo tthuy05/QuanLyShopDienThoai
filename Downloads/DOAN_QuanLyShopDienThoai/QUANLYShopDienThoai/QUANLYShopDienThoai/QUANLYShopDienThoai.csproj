@@ -37,6 +37,7 @@
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="FrmBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +91,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSanPham.resx">
+      <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -115,6 +120,17 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\apple-watch__ywfuk5wnf1u2_og.png" />
+    <Content Include="Images\củ-sac-nhanh-apple-type-c-20w-pd-cho-iphoneipad-mhje3_1643169054.jpg" />
+    <Content Include="Images\deo-hoco-iphone-15.jpg" />
+    <Content Include="Images\iphone-15-pro-max_3.png" />
+    <Content Include="Images\no-image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\samsung-galaxy-s24-ultra-5g-600x600.jpg" />
+    <Content Include="Images\tai-nghe-sony-wh-1000xm5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

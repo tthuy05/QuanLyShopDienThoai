@@ -42,7 +42,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(153, 178);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 21);
+            this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tài Khoản";
             // 
@@ -52,7 +52,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(157, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 21);
+            this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật Khẩu";
             // 
@@ -62,7 +62,7 @@
             this.txtTaiKhoan.AnimateReadOnly = false;
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaiKhoan.Depth = 0;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTaiKhoan.LeadingIcon = null;
             this.txtTaiKhoan.Location = new System.Drawing.Point(270, 159);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -80,7 +80,7 @@
             this.txtMatKhau.AnimateReadOnly = false;
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau.Depth = 0;
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMatKhau.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtMatKhau.LeadingIcon = null;
             this.txtMatKhau.Location = new System.Drawing.Point(270, 237);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -136,7 +136,7 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(847, 566);
@@ -151,6 +151,7 @@
             this.Name = "FrmLogin";
             this.Padding = new System.Windows.Forms.Padding(3, 84, 3, 4);
             this.Text = "Phần Mềm Quản Lý Shop Điện Thoại - Đăng Nhập";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -22,3 +22,19 @@ C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\
 C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYSh.3FA21CCA.Up2Date
 C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.exe
 C:\Users\Admin\Downloads\QuanLyDienThoai_NEt\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.pdb
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.exe.config
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.exe
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\QUANLYShopDienThoai.pdb
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\MaterialSkin.dll
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.AssemblyReference.cache
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmLogin.resources
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmMain.resources
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.Properties.Resources.resources
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.GenerateResource.cache
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.csproj.CoreCompileInputs.cache
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYSh.3FA21CCA.Up2Date
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.exe
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.pdb
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.FrmSanPham.resources
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\bin\Debug\Images\no-image.png
+D:\OneDrive\Máy tính\New folder\New folder\Downloads\DOAN_QuanLyShopDienThoai\QUANLYShopDienThoai\QUANLYShopDienThoai\obj\Debug\QUANLYShopDienThoai.exe.config

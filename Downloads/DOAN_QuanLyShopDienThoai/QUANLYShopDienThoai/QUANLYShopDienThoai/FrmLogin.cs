@@ -1,19 +1,25 @@
-﻿using System;
+﻿using MaterialSkin;                  
+using MaterialSkin;
+using MaterialSkin.Controls;
+using MaterialSkin.Controls;
+using QUANLYShopDienThoai;
+using QUANLYShopDienThoai;
+using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using QUANLYShopDienThoai;
-using MaterialSkin;                  
-using MaterialSkin.Controls;
 
 namespace QUANLYShopDienThoai
 {
     
     public partial class FrmLogin : MaterialSkin.Controls.MaterialForm
     {
-       
-        private const string connectionString = @"Server=localhost\SQLEXPRESS01;Database=QUANLYDIENTHOAI;User Id=sa;Password=123456;TrustServerCertificate=True;";
+
+        //private const string connectionString = @"Server=localhost\SQLEXPRESS01;Database=QUANLYDIENTHOAI;User Id=sa;Password=123456;TrustServerCertificate=True;";
+        string connectionString = @"Data Source=DESKTOP-UOFSMED\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
 
         public FrmLogin()
         {
@@ -97,6 +103,11 @@ namespace QUANLYShopDienThoai
         private void label3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

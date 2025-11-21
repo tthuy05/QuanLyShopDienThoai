@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace QUANLYShopDienThoai
 {
@@ -37,7 +38,9 @@ namespace QUANLYShopDienThoai
         private void btnQLSanPham_Click(object sender, EventArgs e)
         {
             FrmSanPham frm = new FrmSanPham();
+            this.Hide();
             frm.ShowDialog();
+            this.Show();
         }
         private void btnBanHang_Click(object sender, EventArgs e)
         {
@@ -56,5 +59,12 @@ namespace QUANLYShopDienThoai
             loginForm.Show();
             this.Close();
         }
+
+        private void groupBoxChucNang_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }
