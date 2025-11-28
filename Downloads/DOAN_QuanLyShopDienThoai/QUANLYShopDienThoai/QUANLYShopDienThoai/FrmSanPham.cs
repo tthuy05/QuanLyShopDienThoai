@@ -77,14 +77,12 @@ namespace QUANLYShopDienThoai
 
                 txtSoLuong.Text = row.Cells["SoLuongTon"].Value.ToString();
 
-                // Điều khiển nút
-                btnThem.Enabled = false; // Đang chọn hàng cũ thì không cho Thêm
+                btnThem.Enabled = false; 
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
         }
 
-        // 3. Nút LÀM MỚI (Reset form)
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtMaSP.Clear();
@@ -97,11 +95,10 @@ namespace QUANLYShopDienThoai
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
 
-            LoadData(); // Tải lại bảng gốc
+            LoadData(); 
             txtTenSP.Focus();
         }
 
-        // 4. Nút THÊM
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTenSP.Text) || string.IsNullOrEmpty(txtGiaBan.Text))
@@ -112,7 +109,7 @@ namespace QUANLYShopDienThoai
 
             
 
-            string tenFileAnh = ""; // Mặc định là rỗng nếu không chọn ảnh
+            string tenFileAnh = ""; 
 
             // --- XỬ LÝ ẢNH ---
             if (!string.IsNullOrEmpty(duongDanAnhGoc))

@@ -1,22 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\downloads\\quanlydienthoai_net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmbaocao.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmbaocao.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|c:\\users\\admin\\desktop\\net\\downloads\\doan_quanlyshopdienthoai\\quanlyshopdienthoai\\quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D2CF081-94AD-4F9B-9BF9-C9A865975CE0}|QUANLYShopDienThoai\\QUANLYShopDienThoai.csproj|solutionrelative:quanlyshopdienthoai\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,33 +57,104 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 321,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 572,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmMain.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
-              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmMain.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
-              "RelativeToolTip": "QUANLYShopDienThoai\\FrmMain.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAwCAAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FrmSanPham.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmSanPham.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmSanPham.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmSanPham.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmSanPham.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAAAHEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T16:39:38.667Z",
+              "WhenOpened": "2025-11-28T12:44:00.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmSanPham.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmSanPham.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmSanPham.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmSanPham.cs [Design]",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmSanPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T12:43:55.041Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FrmBaoCao.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.Designer.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmBaoCao.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.Designer.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmBaoCao.Designer.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwJgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T12:14:51.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmBaoCao.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T12:12:08.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmBanHang.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBanHang.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmBanHang.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBanHang.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmBanHang.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAqwDYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T10:33:01.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmBanHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBanHang.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmBanHang.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBanHang.cs [Design]",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmBanHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T10:29:27.975Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "FrmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
               "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmMain.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs [Design]",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs [Design]",
               "RelativeToolTip": "QUANLYShopDienThoai\\FrmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T16:39:15.63Z",
@@ -59,28 +162,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
+              "DocumentIndex": 10,
+              "Title": "FrmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
               "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs [Design]",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:56:05.785Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FrmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
               "RelativeToolTip": "QUANLYShopDienThoai\\FrmLogin.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAAAFgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T15:58:36.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmLogin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyDienThoai_NEt\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmLogin.cs [Design]",
-              "RelativeToolTip": "QUANLYShopDienThoai\\FrmLogin.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "FrmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmMain.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmMain.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmMain.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwC4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T15:56:05.785Z",
+              "WhenOpened": "2025-11-17T16:39:38.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmBaoCao.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\FrmBaoCao.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\FrmBaoCao.cs [Design]",
+              "RelativeToolTip": "QUANLYShopDienThoai\\FrmBaoCao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T10:22:59.544Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "QUANLYShopDienThoai\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Net\\Downloads\\DOAN_QuanLyShopDienThoai\\QUANLYShopDienThoai\\QUANLYShopDienThoai\\DatabaseHelper.cs",
+              "RelativeToolTip": "QUANLYShopDienThoai\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T12:03:29.815Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 23,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         },
@@ -90,15 +241,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }

@@ -44,7 +44,7 @@ namespace QUANLYShopDienThoai
         }
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            FrmBanHang frm = new FrmBanHang();
+            frmBanHang frm = new frmBanHang();
             frm.ShowDialog();
         }
         private void btnBaoCao_Click(object sender, EventArgs e)

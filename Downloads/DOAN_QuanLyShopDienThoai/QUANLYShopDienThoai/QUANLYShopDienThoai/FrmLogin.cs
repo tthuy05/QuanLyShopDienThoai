@@ -1,8 +1,5 @@
 ﻿using MaterialSkin;                  
-using MaterialSkin;
 using MaterialSkin.Controls;
-using MaterialSkin.Controls;
-using QUANLYShopDienThoai;
 using QUANLYShopDienThoai;
 using System;
 using System.Configuration;
@@ -19,7 +16,7 @@ namespace QUANLYShopDienThoai
     {
 
         //private const string connectionString = @"Server=localhost\SQLEXPRESS01;Database=QUANLYDIENTHOAI;User Id=sa;Password=123456;TrustServerCertificate=True;";
-        string connectionString = @"Data Source=DESKTOP-UOFSMED\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=TTHUY005\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
 
         public FrmLogin()
         {
