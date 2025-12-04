@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxChucNang = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnBaoCao = new MaterialSkin.Controls.MaterialButton();
             this.btnBanHang = new MaterialSkin.Controls.MaterialButton();
             this.btnQLSanPham = new MaterialSkin.Controls.MaterialButton();
             this.btnLogout = new MaterialSkin.Controls.MaterialButton();
-            this.groupBoxChucNang.SuspendLayout();
+            this.materialLabelTitle = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabelSubtitle = new MaterialSkin.Controls.MaterialLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBoxChucNang
-            // 
-            this.groupBoxChucNang.BackColor = System.Drawing.Color.White;
-            this.groupBoxChucNang.Controls.Add(this.btnBaoCao);
-            this.groupBoxChucNang.Controls.Add(this.btnBanHang);
-            this.groupBoxChucNang.Controls.Add(this.btnQLSanPham);
-            this.groupBoxChucNang.Controls.Add(this.btnLogout);
-            this.groupBoxChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxChucNang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxChucNang.Location = new System.Drawing.Point(3, 80);
-            this.groupBoxChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxChucNang.Name = "groupBoxChucNang";
-            this.groupBoxChucNang.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxChucNang.Size = new System.Drawing.Size(501, 518);
-            this.groupBoxChucNang.TabIndex = 1;
-            this.groupBoxChucNang.TabStop = false;
-            this.groupBoxChucNang.Text = "Menu";
-            this.groupBoxChucNang.Enter += new System.EventHandler(this.groupBoxChucNang_Enter);
             // 
             // btnBaoCao
             // 
@@ -63,17 +49,16 @@
             this.btnBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaoCao.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnBaoCao.Depth = 0;
-            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBaoCao.HighEmphasis = true;
             this.btnBaoCao.Icon = null;
-            this.btnBaoCao.Location = new System.Drawing.Point(97, 297);
-            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.btnBaoCao.Location = new System.Drawing.Point(190, 310);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBaoCao.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnBaoCao.Size = new System.Drawing.Size(300, 60);
+            this.btnBaoCao.Size = new System.Drawing.Size(164, 80);
             this.btnBaoCao.TabIndex = 3;
-            this.btnBaoCao.Text = "Báo Cáo Doanh Thu";
+            this.btnBaoCao.Text = "BÁO CÁO\r\nDOANH THU";
             this.btnBaoCao.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnBaoCao.UseAccentColor = false;
             this.btnBaoCao.UseVisualStyleBackColor = false;
@@ -87,18 +72,16 @@
             this.btnBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBanHang.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnBanHang.Depth = 0;
-            this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBanHang.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBanHang.HighEmphasis = true;
             this.btnBanHang.Icon = null;
-            this.btnBanHang.Location = new System.Drawing.Point(97, 186);
-            this.btnBanHang.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.btnBanHang.Location = new System.Drawing.Point(405, 181);
+            this.btnBanHang.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBanHang.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnBanHang.Size = new System.Drawing.Size(300, 60);
+            this.btnBanHang.Size = new System.Drawing.Size(166, 80);
             this.btnBanHang.TabIndex = 2;
-            this.btnBanHang.Text = "Tạo Hóa Đơn Bán Hàng";
+            this.btnBanHang.Text = "TẠO HÓA ĐƠN\r\nBÁN HÀNG";
             this.btnBanHang.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnBanHang.UseAccentColor = false;
             this.btnBanHang.UseVisualStyleBackColor = false;
@@ -112,18 +95,16 @@
             this.btnQLSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQLSanPham.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnQLSanPham.Depth = 0;
-            this.btnQLSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLSanPham.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLSanPham.HighEmphasis = true;
             this.btnQLSanPham.Icon = null;
-            this.btnQLSanPham.Location = new System.Drawing.Point(97, 85);
-            this.btnQLSanPham.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.btnQLSanPham.Location = new System.Drawing.Point(190, 181);
+            this.btnQLSanPham.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnQLSanPham.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnQLSanPham.Name = "btnQLSanPham";
             this.btnQLSanPham.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnQLSanPham.Size = new System.Drawing.Size(300, 60);
+            this.btnQLSanPham.Size = new System.Drawing.Size(164, 80);
             this.btnQLSanPham.TabIndex = 1;
-            this.btnQLSanPham.Text = "Quản Lý Sản Phẩm";
+            this.btnQLSanPham.Text = "QUẢN LÝ\r\nSẢN PHẨM";
             this.btnQLSanPham.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnQLSanPham.UseAccentColor = false;
             this.btnQLSanPham.UseVisualStyleBackColor = false;
@@ -133,49 +114,105 @@
             // 
             this.btnLogout.AutoSize = false;
             this.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLogout.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogout.BackColor = System.Drawing.Color.Gray;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnLogout.Depth = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.HighEmphasis = true;
             this.btnLogout.Icon = null;
-            this.btnLogout.Location = new System.Drawing.Point(97, 406);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.btnLogout.Location = new System.Drawing.Point(405, 310);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogout.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnLogout.Size = new System.Drawing.Size(300, 60);
+            this.btnLogout.Size = new System.Drawing.Size(167, 80);
             this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "Đăng Xuất";
+            this.btnLogout.Text = "ĐĂNG XUẤT";
             this.btnLogout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnLogout.UseAccentColor = false;
+            this.btnLogout.UseAccentColor = true;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // materialLabelTitle
+            // 
+            this.materialLabelTitle.AutoSize = true;
+            this.materialLabelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialLabelTitle.Depth = 0;
+            this.materialLabelTitle.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabelTitle.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabelTitle.Location = new System.Drawing.Point(166, 76);
+            this.materialLabelTitle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelTitle.Name = "materialLabelTitle";
+            this.materialLabelTitle.Size = new System.Drawing.Size(351, 29);
+            this.materialLabelTitle.TabIndex = 5;
+            this.materialLabelTitle.Text = "HỆ THỐNG QUẢN LÝ CỬA HÀNG";
+            this.materialLabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabelSubtitle
+            // 
+            this.materialLabelSubtitle.AutoSize = true;
+            this.materialLabelSubtitle.Depth = 0;
+            this.materialLabelSubtitle.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabelSubtitle.ForeColor = System.Drawing.Color.Gray;
+            this.materialLabelSubtitle.Location = new System.Drawing.Point(316, 132);
+            this.materialLabelSubtitle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelSubtitle.Name = "materialLabelSubtitle";
+            this.materialLabelSubtitle.Size = new System.Drawing.Size(125, 19);
+            this.materialLabelSubtitle.TabIndex = 6;
+            this.materialLabelSubtitle.Text = "Vui lòng lựa chọn";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(6, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 230);
+            this.panel1.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 230);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(507, 602);
-            this.Controls.Add(this.groupBoxChucNang);
+            this.ClientSize = new System.Drawing.Size(595, 447);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.materialLabelSubtitle);
+            this.Controls.Add(this.materialLabelTitle);
+            this.Controls.Add(this.btnBaoCao);
+            this.Controls.Add(this.btnBanHang);
+            this.Controls.Add(this.btnQLSanPham);
+            this.Controls.Add(this.btnLogout);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmMain";
-            this.Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
-            this.Text = "Xin Chào ! Vui Lòng Chọn Chức Năng";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.FrmMain_Load);
-            this.groupBoxChucNang.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBoxChucNang;
         private MaterialSkin.Controls.MaterialButton btnBaoCao;
         private MaterialSkin.Controls.MaterialButton btnBanHang;
         private MaterialSkin.Controls.MaterialButton btnQLSanPham;
         private MaterialSkin.Controls.MaterialButton btnLogout;
+        private MaterialSkin.Controls.MaterialLabel materialLabelTitle;
+        private MaterialSkin.Controls.MaterialLabel materialLabelSubtitle;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

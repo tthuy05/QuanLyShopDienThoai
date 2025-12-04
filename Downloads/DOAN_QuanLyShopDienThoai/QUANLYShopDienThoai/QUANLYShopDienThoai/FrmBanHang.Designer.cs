@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanHang));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbSanPham = new MaterialSkin.Controls.MaterialComboBox();
@@ -47,8 +49,12 @@
             this.btnThanhToan = new MaterialSkin.Controls.MaterialButton();
             this.lblTong = new MaterialSkin.Controls.MaterialLabel();
             this.lblTongTien = new MaterialSkin.Controls.MaterialLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGioHang)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialDivider1
@@ -126,6 +132,7 @@
             this.txtConLai.LeadingIcon = null;
             this.txtConLai.MouseState = MaterialSkin.MouseState.OUT;
             this.txtConLai.Name = "txtConLai";
+            this.txtConLai.ReadOnly = true;
             this.txtConLai.TrailingIcon = null;
             // 
             // materialLabel5
@@ -190,9 +197,29 @@
             // 
             // dgvGioHang
             // 
-            this.dgvGioHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvGioHang, "dgvGioHang");
+            this.dgvGioHang.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGioHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGioHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvGioHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGioHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvGioHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvGioHang.EnableHeadersVisualStyles = false;
             this.dgvGioHang.Name = "dgvGioHang";
+            this.dgvGioHang.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvGioHang.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvGioHang.RowTemplate.Height = 35;
+            this.dgvGioHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // btnXoa
             // 
@@ -240,10 +267,23 @@
             this.lblTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTongTien.Name = "lblTongTien";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // frmBanHang
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.lblTong);
             this.Controls.Add(this.btnThanhToan);
@@ -262,11 +302,13 @@
             this.Controls.Add(this.cmbSanPham);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Name = "frmBanHang";
             this.Load += new System.EventHandler(this.frmBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGioHang)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +334,7 @@
         private MaterialSkin.Controls.MaterialButton btnThanhToan;
         private MaterialSkin.Controls.MaterialLabel lblTong;
         private MaterialSkin.Controls.MaterialLabel lblTongTien;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

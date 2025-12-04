@@ -46,7 +46,6 @@ namespace QUANLYShopDienThoai
                 DataTable dtTable = DatabaseHelper.GetDataTable(sql);
                 dgvDoanhThu.DataSource = dtTable;
 
-                // Làm đẹp 
                 dgvDoanhThu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvDoanhThu.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgvDoanhThu.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
@@ -88,7 +87,6 @@ namespace QUANLYShopDienThoai
             if (MessageBox.Show("Bạn có chắc muốn đăng xuất không?", "ĐĂNG XUẤT",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // Đóng tất cả form, chỉ giữ lại Login
                 for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
                 {
                     if (Application.OpenForms[i].Name != "FrmLogin")
