@@ -2,15 +2,8 @@
 {
     partial class frmBanHang
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanHang));
@@ -51,6 +40,7 @@
             this.lblTongTien = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnInHoaDon = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGioHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -163,7 +153,7 @@
             this.btnThem.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnThem.Depth = 0;
             this.btnThem.HighEmphasis = true;
-            this.btnThem.Icon = null;
+            this.btnThem.Icon = ((System.Drawing.Image)(resources.GetObject("btnThem.Icon")));
             this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThem.Name = "btnThem";
             this.btnThem.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -227,7 +217,7 @@
             this.btnXoa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnXoa.Depth = 0;
             this.btnXoa.HighEmphasis = true;
-            this.btnXoa.Icon = null;
+            this.btnXoa.Icon = ((System.Drawing.Image)(resources.GetObject("btnXoa.Icon")));
             this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -242,7 +232,7 @@
             this.btnThanhToan.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnThanhToan.Depth = 0;
             this.btnThanhToan.HighEmphasis = true;
-            this.btnThanhToan.Icon = null;
+            this.btnThanhToan.Icon = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Icon")));
             this.btnThanhToan.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -279,10 +269,26 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // btnInHoaDon
+            // 
+            resources.ApplyResources(this.btnInHoaDon, "btnInHoaDon");
+            this.btnInHoaDon.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnInHoaDon.Depth = 0;
+            this.btnInHoaDon.HighEmphasis = true;
+            this.btnInHoaDon.Icon = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.Icon")));
+            this.btnInHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnInHoaDon.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnInHoaDon.UseAccentColor = false;
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
+            // 
             // frmBanHang
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.lblTong);
@@ -336,5 +342,6 @@
         private MaterialSkin.Controls.MaterialLabel lblTongTien;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialButton btnInHoaDon;
     }
 }

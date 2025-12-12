@@ -94,7 +94,17 @@ namespace QUANLYShopDienThoai
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát khỏi ứng dụng không?",
+                "Xác nhận Thoát",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); 
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)

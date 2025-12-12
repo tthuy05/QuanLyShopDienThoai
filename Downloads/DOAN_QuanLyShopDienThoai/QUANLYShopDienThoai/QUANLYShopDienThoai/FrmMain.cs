@@ -65,6 +65,14 @@ namespace QUANLYShopDienThoai
 
         }
 
-     
+        private void materialLabelTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabelSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

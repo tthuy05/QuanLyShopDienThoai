@@ -109,7 +109,7 @@
             this.btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnLogin.Depth = 0;
             this.btnLogin.HighEmphasis = true;
-            this.btnLogin.Icon = null;
+            this.btnLogin.Icon = ((System.Drawing.Image)(resources.GetObject("btnLogin.Icon")));
             this.btnLogin.Location = new System.Drawing.Point(360, 370);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
@@ -130,7 +130,7 @@
             this.btnThoat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnThoat.Depth = 0;
             this.btnThoat.HighEmphasis = true;
-            this.btnThoat.Icon = null;
+            this.btnThoat.Icon = ((System.Drawing.Image)(resources.GetObject("btnThoat.Icon")));
             this.btnThoat.Location = new System.Drawing.Point(590, 370);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnThoat.MouseState = MaterialSkin.MouseState.HOVER;

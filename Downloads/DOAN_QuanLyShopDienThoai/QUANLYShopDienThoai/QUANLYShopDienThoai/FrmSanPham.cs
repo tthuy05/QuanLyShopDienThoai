@@ -40,7 +40,6 @@ namespace QUANLYShopDienThoai
 
         private void SetupInterface()
         {
-            // Định dạng tiền tệ cho cột Giá Bán
             if (dgvSanPham.Columns.Contains("GiaBan"))
                 dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Format = "N0";
 
