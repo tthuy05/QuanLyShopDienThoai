@@ -7,7 +7,12 @@ namespace QUANLYShopDienThoai
 {
     public class DatabaseHelper
     {
-        public static string strConnect = @"Data Source=TTHUY005\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
+        public static string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
+
+        public static SqlConnection GetConnection()
+        {
+            return new SqlConnection(strConnect);
+        }
 
         public static DataTable GetDataTable(string query)
         {
@@ -47,6 +52,7 @@ namespace QUANLYShopDienThoai
                 }
             }
         }
+
         public static object ExecuteScalar(string query, SqlParameter[] parameters = null)
         {
             using (SqlConnection conn = new SqlConnection(strConnect))

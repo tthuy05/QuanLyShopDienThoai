@@ -23,11 +23,10 @@
             this.btnIn = new System.Windows.Forms.Button();
             this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
             this.lblTongDoanhThu = new System.Windows.Forms.Label();
-            this.lblTongLoiNhuan = new System.Windows.Forms.Label();   // THÊM
+            this.lblTongLoiNhuan = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +102,7 @@
             this.lblTongLoiNhuan.ForeColor = System.Drawing.Color.Blue;
             this.lblTongLoiNhuan.Location = new System.Drawing.Point(34, 570);
             this.lblTongLoiNhuan.Name = "lblTongLoiNhuan";
-            this.lblTongLoiNhuan.Size = new System.Drawing.Size(263, 33);
+            this.lblTongLoiNhuan.Size = new System.Drawing.Size(251, 33);
             this.lblTongLoiNhuan.TabIndex = 10;
             this.lblTongLoiNhuan.Text = "Tổng lợi nhuận: 0";
             // 
@@ -138,19 +137,6 @@
             this.btnQuayLai.UseVisualStyleBackColor = false;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.Red;
-            this.btnDangXuat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(857, 528);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(137, 43);
-            this.btnDangXuat.TabIndex = 7;
-            this.btnDangXuat.Text = "ĐĂNG XUẤT";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
-            // 
             // FrmBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,7 +149,6 @@
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnQuayLai);
-            this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.dgvDoanhThu);
             this.Controls.Add(this.lblTongDoanhThu);
             this.Controls.Add(this.lblTongLoiNhuan);
@@ -189,6 +174,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Button btnDangXuat;
     }
 }

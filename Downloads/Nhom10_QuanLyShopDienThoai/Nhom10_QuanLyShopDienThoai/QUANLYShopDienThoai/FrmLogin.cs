@@ -9,7 +9,7 @@ namespace QUANLYShopDienThoai
 {
     public partial class FrmLogin : MaterialForm
     {
-        string connectionString = @"Data Source=TTHUY005\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYDIENTHOAI;Integrated Security=True;TrustServerCertificate=True";
 
         public FrmLogin()
         {

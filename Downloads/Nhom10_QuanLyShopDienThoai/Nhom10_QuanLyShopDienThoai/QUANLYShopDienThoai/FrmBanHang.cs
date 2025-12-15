@@ -12,6 +12,7 @@ namespace QUANLYShopDienThoai
     public partial class frmBanHang : MaterialForm
     {
         DataTable gioHang = new DataTable();
+        DataTable dtSanPham = new DataTable();
         int maNVHienTai = 1;
         private int maHDVuaTao = 0;
 
@@ -26,21 +27,30 @@ namespace QUANLYShopDienThoai
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(
-                Primary.Blue800,
-                Primary.Blue900,
-                Primary.Blue500,
-                Accent.Cyan400,
-                TextShade.WHITE
-            );
+            skinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Cyan400, TextShade.WHITE);
 
-            gioHang.Columns.Add("MaSP", typeof(int));
-            gioHang.Columns.Add("TenSP", typeof(string));
-            gioHang.Columns.Add("DonGia", typeof(decimal));
-            gioHang.Columns.Add("SoLuong", typeof(int));
-            gioHang.Columns.Add("ThanhTien", typeof(decimal));
+            if (gioHang.Columns.Count == 0)
+            {
+                gioHang.Columns.Add("MaSP", typeof(int));
+                gioHang.Columns.Add("TenSP", typeof(string));
+                gioHang.Columns.Add("DonGia", typeof(decimal));
+                gioHang.Columns.Add("SoLuong", typeof(int));
+                gioHang.Columns.Add("ThanhTien", typeof(decimal));
+            }
 
             dgvGioHang.DataSource = gioHang;
+            CauHinhGridView();
+
+            gioHang.RowChanged += (s, ev) => CapNhatTongTien();
+            gioHang.RowDeleted += (s, ev) => CapNhatTongTien();
+
+            LoadKhachHang();
+            LoadSanPham();
+            CapNhatTongTien();
+        }
+
+        private void CauHinhGridView()
+        {
             dgvGioHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGioHang.AllowUserToResizeColumns = true;
             dgvGioHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
@@ -52,80 +62,105 @@ namespace QUANLYShopDienThoai
             dgvGioHang.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
             dgvGioHang.Columns["ThanhTien"].DefaultCellStyle.ForeColor = Color.Red;
             dgvGioHang.Columns["ThanhTien"].DefaultCellStyle.Font = new Font(dgvGioHang.Font, FontStyle.Bold);
-
-            gioHang.RowChanged += (s, ev) => CapNhatTongTien();
-            gioHang.RowDeleted += (s, ev) => CapNhatTongTien();
-
-            LoadSanPham();
-            LoadKhachHang();
-            CapNhatTongTien();
-        }
-
-        private void LoadSanPham()
-        {
-            string sql = "SELECT MaSP, TenSP, GiaBan, SoLuongTon FROM SAN_PHAM WHERE SoLuongTon > 0";
-            DataTable dt = DatabaseHelper.GetDataTable(sql);
-            cmbSanPham.DataSource = dt;
-            cmbSanPham.DisplayMember = "TenSP";
-            cmbSanPham.ValueMember = "MaSP";
         }
 
         private void LoadKhachHang()
         {
-            string sql = "SELECT MaKH, ISNULL(TenKH + ' - ' + CONVERT(varchar,SDT), '-- Khách lẻ --') AS TenKH FROM KHACH_HANG";
-            DataTable dt = DatabaseHelper.GetDataTable(sql);
+            try
+            {
+                string sql = "SELECT MaKH, TenKH + ' - ' + SDT AS HienThi FROM KHACH_HANG";
+                DataTable dt = DatabaseHelper.GetDataTable(sql);
 
-            DataRow dr = dt.NewRow();
-            dr["MaKH"] = 0;
-            dr["TenKH"] = "-- Khách lẻ --";
-            dt.Rows.InsertAt(dr, 0);
+                cmbKhachHang.DataSource = dt;
+                cmbKhachHang.DisplayMember = "HienThi"; 
+                cmbKhachHang.ValueMember = "MaKH";     
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải khách hàng: " + ex.Message);
+            }
+        }
 
-            cmbKhachHang.DataSource = dt;
-            cmbKhachHang.DisplayMember = "TenKH";
-            cmbKhachHang.ValueMember = "MaKH";
+        private void LoadSanPham()
+        {
+            try
+            {
+                this.cmbSanPham.SelectedIndexChanged -= new EventHandler(cmbSanPham_SelectedIndexChanged);
+
+                string sql = "SELECT MaSP, TenSP, GiaBan, SoLuongTon FROM SAN_PHAM WHERE SoLuongTon > 0";
+                dtSanPham = DatabaseHelper.GetDataTable(sql);
+
+                cmbSanPham.DataSource = dtSanPham;
+                cmbSanPham.DisplayMember = "TenSP";
+                cmbSanPham.ValueMember = "MaSP";
+
+                this.cmbSanPham.SelectedIndexChanged += new EventHandler(cmbSanPham_SelectedIndexChanged);
+
+                if (cmbSanPham.Items.Count > 0)
+                {
+                    cmbSanPham.SelectedIndex = 0;
+                    HienThiThongTinSanPham();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải sản phẩm: " + ex.Message);
+            }
         }
 
         private void cmbSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbSanPham.SelectedValue == null || !int.TryParse(cmbSanPham.SelectedValue.ToString(), out int maSP)) return;
+            HienThiThongTinSanPham();
+        }
 
-            string sql = $"SELECT GiaBan, SoLuongTon FROM SAN_PHAM WHERE MaSP = {maSP}";
-            DataTable dt = DatabaseHelper.GetDataTable(sql);
-            if (dt.Rows.Count > 0)
+        private void HienThiThongTinSanPham()
+        {
+            try
             {
-                txtDonGia.Text = Convert.ToDecimal(dt.Rows[0]["GiaBan"]).ToString("N0");
-                txtConLai.Text = dt.Rows[0]["SoLuongTon"].ToString();
+                if (cmbSanPham.SelectedIndex == -1 || cmbSanPham.SelectedItem == null) return;
+
+                // Lấy DataRowView từ dòng đang chọn (An toàn nhất)
+                DataRowView drv = cmbSanPham.SelectedItem as DataRowView;
+                if (drv != null)
+                {
+                    decimal gia = Convert.ToDecimal(drv["GiaBan"]);
+                    int ton = Convert.ToInt32(drv["SoLuongTon"]);
+
+                    txtDonGia.Text = gia.ToString("N0");
+                    txtConLai.Text = ton.ToString();
+
+                    txtDonGia.Refresh();
+                    txtConLai.Refresh();
+                }
             }
+            catch { }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (cmbSanPham.SelectedValue == null) return;
+            if (cmbSanPham.SelectedIndex == -1) { MessageBox.Show("Vui lòng chọn sản phẩm!"); return; }
 
-            int maSP = (int)cmbSanPham.SelectedValue;
+            int maSP = 0;
+            if (cmbSanPham.SelectedValue is int) maSP = (int)cmbSanPham.SelectedValue;
+            else int.TryParse(cmbSanPham.SelectedValue.ToString(), out maSP);
+
             string tenSP = cmbSanPham.Text;
 
-            if (!decimal.TryParse(txtDonGia.Text.Replace(",", ""), out decimal donGia)) return;
+            if (!decimal.TryParse(txtDonGia.Text.Replace(",", "").Replace(".", ""), out decimal donGia)) return;
+
             int slMua = (int)numSL.Value;
+            int.TryParse(txtConLai.Text, out int slTon);
 
-            if (!int.TryParse(txtConLai.Text, out int slTon)) return;
-
-            if (slMua <= 0)
-            {
-                MessageBox.Show("Số lượng phải lớn hơn 0!");
-                return;
-            }
-            if (slMua > slTon)
-            {
-                MessageBox.Show("Không đủ hàng trong kho!");
-                return;
-            }
+            if (slMua <= 0) { MessageBox.Show("Số lượng > 0!"); return; }
+            if (slMua > slTon) { MessageBox.Show("Kho không đủ hàng!"); return; }
 
             DataRow[] rows = gioHang.Select($"MaSP = {maSP}");
             if (rows.Length > 0)
             {
-                rows[0]["SoLuong"] = (int)rows[0]["SoLuong"] + slMua;
-                rows[0]["ThanhTien"] = Convert.ToDecimal(rows[0]["SoLuong"]) * donGia;
+                int slMoi = (int)rows[0]["SoLuong"] + slMua;
+                if (slMoi > slTon) { MessageBox.Show("Vượt quá tồn kho!"); return; }
+                rows[0]["SoLuong"] = slMoi;
+                rows[0]["ThanhTien"] = slMoi * donGia;
             }
             else
             {
@@ -139,6 +174,7 @@ namespace QUANLYShopDienThoai
             if (dgvGioHang.SelectedRows.Count > 0 && !dgvGioHang.SelectedRows[0].IsNewRow)
             {
                 gioHang.Rows.RemoveAt(dgvGioHang.SelectedRows[0].Index);
+                CapNhatTongTien();
             }
         }
 
@@ -146,117 +182,99 @@ namespace QUANLYShopDienThoai
         {
             decimal tong = 0;
             foreach (DataRow r in gioHang.Rows)
-                tong += Convert.ToDecimal(r["ThanhTien"]);
+            {
+                if (r.RowState != DataRowState.Deleted)
+                    tong += Convert.ToDecimal(r["ThanhTien"]);
+            }
             lblTongTien.Text = tong.ToString("#,##0") + " đ";
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (gioHang.Rows.Count == 0)
+            if (gioHang.Rows.Count == 0) { MessageBox.Show("Giỏ hàng trống!"); return; }
+
+            if (cmbKhachHang.SelectedValue == null)
             {
-                MessageBox.Show("Chưa có sản phẩm nào trong giỏ hàng!");
+                MessageBox.Show("Dữ liệu khách hàng không hợp lệ!");
                 return;
             }
+
+            if (MessageBox.Show("Xác nhận thanh toán?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No) return;
 
             decimal tongTien = 0;
-            foreach (DataRow r in gioHang.Rows)
-                tongTien += Convert.ToDecimal(r["ThanhTien"]);
+            foreach (DataRow r in gioHang.Rows) tongTien += Convert.ToDecimal(r["ThanhTien"]);
 
-            int maKH = (cmbKhachHang.SelectedValue is int kh && kh > 0) ? kh : 1;
-            int maHD = 0;
+            int maKH = Convert.ToInt32(cmbKhachHang.SelectedValue);
 
-            try
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
-                string sqlHD = "INSERT INTO HOA_DON (MaNV, NgayBan, MaKH, TongTien) " +
-                               "OUTPUT INSERTED.MaHD VALUES (@MaNV, GETDATE(), @MaKH, @Tong)";
-                SqlParameter[] p = {
-                    new SqlParameter("@MaNV", maNVHienTai),
-                    new SqlParameter("@MaKH", maKH),
-                    new SqlParameter("@Tong", tongTien)
-                };
-
-                maHD = (int)DatabaseHelper.ExecuteScalar(sqlHD, p);
-                maHDVuaTao = maHD;
-
-                foreach (DataRow r in gioHang.Rows)
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                try
                 {
-                    int maSP = (int)r["MaSP"];
-                    int sl = (int)r["SoLuong"];
-                    decimal gia = (decimal)r["DonGia"];
+                    string sqlHD = "INSERT INTO HOA_DON (MaNV, NgayBan, MaKH, TongTien) OUTPUT INSERTED.MaHD VALUES (@MaNV, GETDATE(), @MaKH, @Tong)";
+                    SqlCommand cmd = new SqlCommand(sqlHD, conn, tran);
+                    cmd.Parameters.AddWithValue("@MaNV", maNVHienTai);
+                    cmd.Parameters.AddWithValue("@MaKH", maKH);
+                    cmd.Parameters.AddWithValue("@Tong", tongTien);
 
-                    string sqlCT = "INSERT INTO CT_HOA_DON (MaHD, MaSP, SoLuong, DonGia) VALUES (@hd, @sp, @sl, @gia)";
-                    DatabaseHelper.ExecuteNonQuery(sqlCT, new SqlParameter[] {
-                        new SqlParameter("@hd", maHD),
-                        new SqlParameter("@sp", maSP),
-                        new SqlParameter("@sl", sl),
-                        new SqlParameter("@gia", gia)
-                    });
+                    maHDVuaTao = (int)cmd.ExecuteScalar();
 
-                    string sqlKho = "UPDATE SAN_PHAM SET SoLuongTon = SoLuongTon - @sl WHERE MaSP = @sp";
-                    DatabaseHelper.ExecuteNonQuery(sqlKho, new SqlParameter[] {
-                        new SqlParameter("@sl", sl),
-                        new SqlParameter("@sp", maSP)
-                    });
+                    foreach (DataRow r in gioHang.Rows)
+                    {
+                        string sqlCT = "INSERT INTO CT_HOA_DON (MaHD, MaSP, SoLuong, DonGia) VALUES (@hd, @sp, @sl, @gia)";
+                        SqlCommand cmdCT = new SqlCommand(sqlCT, conn, tran);
+                        cmdCT.Parameters.AddWithValue("@hd", maHDVuaTao);
+                        cmdCT.Parameters.AddWithValue("@sp", r["MaSP"]);
+                        cmdCT.Parameters.AddWithValue("@sl", r["SoLuong"]);
+                        cmdCT.Parameters.AddWithValue("@gia", r["DonGia"]);
+                        cmdCT.ExecuteNonQuery();
+
+                        string sqlKho = "UPDATE SAN_PHAM SET SoLuongTon = SoLuongTon - @sl WHERE MaSP = @sp";
+                        SqlCommand cmdKho = new SqlCommand(sqlKho, conn, tran);
+                        cmdKho.Parameters.AddWithValue("@sl", r["SoLuong"]);
+                        cmdKho.Parameters.AddWithValue("@sp", r["MaSP"]);
+                        cmdKho.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    MessageBox.Show($"Thanh toán thành công! Mã HĐ: {maHDVuaTao}");
+
+                    // Reset
+                    gioHang.Clear();
+                    CapNhatTongTien();
+                    LoadSanPham();
                 }
-
-                MessageBox.Show($"THANH TOÁN THÀNH CÔNG!\nMã hóa đơn: HD{maHD:0000}\nTổng tiền: {tongTien:#,##0} đ.\nBấm IN HÓA ĐƠN để in.");
-                gioHang.Clear();
-                CapNhatTongTien();
-                LoadSanPham();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi CSDL: " + ex.Message);
-                return;
-            }
-        }
-
-        private void InHoaDon(int maHD)
-        {
-            if (maHD <= 0)
-            {
-                MessageBox.Show("Vui lòng thanh toán trước.");
-                return;
-            }
-
-            try
-            {
-                string sqlInHD = $@"SELECT HD.MaHD, HD.NgayBan, HD.TongTien, 
-                                    SP.TenSP, CT.SoLuong, CT.DonGia AS GiaBanSP, 
-                                    (CT.SoLuong * CT.DonGia) AS ThanhTien, NV.TenNV
-                                FROM HOA_DON HD
-                                JOIN CT_HOA_DON CT ON HD.MaHD = CT.MaHD
-                                JOIN SAN_PHAM SP ON CT.MaSP = SP.MaSP
-                                JOIN NHAN_VIEN NV ON HD.MaNV = NV.MaNV
-                                WHERE HD.MaHD = {maHD}";
-
-                DataTable dtInHD = DatabaseHelper.GetDataTable(sqlInHD);
-                dtInHD.TableName = "dtChiTietHD";
-
-                if (dtInHD.Rows.Count > 0)
+                catch (Exception ex)
                 {
-                    rptHoaDon rpt = new rptHoaDon();
-                    rpt.SetDataSource(dtInHD);
-
-                    FrmInBaoCao fIn = new FrmInBaoCao();
-                    fIn.Text = $"Hóa đơn - HD{maHD:0000}";
-                    fIn.crystalReportViewer1.ReportSource = rpt;
-                    fIn.ShowDialog();
+                    tran.Rollback();
+                    MessageBox.Show("Lỗi thanh toán: " + ex.Message);
                 }
-                else
-                {
-                    MessageBox.Show("Không có dữ liệu hóa đơn này!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi báo cáo: " + ex.Message);
             }
         }
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            InHoaDon(maHDVuaTao);
+            if (maHDVuaTao <= 0) { MessageBox.Show("Chưa có hóa đơn vừa tạo!"); return; }
+            try
+            {
+                string sql = $@"SELECT HD.MaHD, HD.NgayBan, HD.TongTien, SP.TenSP, CT.SoLuong, CT.DonGia AS GiaBanSP, (CT.SoLuong*CT.DonGia) AS ThanhTien, NV.TenNV 
+                                FROM HOA_DON HD JOIN CT_HOA_DON CT ON HD.MaHD=CT.MaHD JOIN SAN_PHAM SP ON CT.MaSP=SP.MaSP JOIN NHAN_VIEN NV ON HD.MaNV=NV.MaNV 
+                                WHERE HD.MaHD={maHDVuaTao}";
+                DataTable dt = DatabaseHelper.GetDataTable(sql);
+
+                dt.TableName = "dtChiTietHD";
+
+                if (dt.Rows.Count > 0)
+                {
+                    rptHoaDon rpt = new rptHoaDon();
+                    rpt.SetDataSource(dt);
+                    FrmInBaoCao f = new FrmInBaoCao();
+                    f.crystalReportViewer1.ReportSource = rpt;
+                    f.ShowDialog();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Lỗi in: " + ex.Message); }
         }
     }
 }
