@@ -43,6 +43,8 @@
             this.btnMain = new MaterialSkin.Controls.MaterialButton();
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtGiaNhap = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.cardInput.SuspendLayout();
@@ -82,6 +84,8 @@
             // cardInput
             // 
             this.cardInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cardInput.Controls.Add(this.materialLabel1);
+            this.cardInput.Controls.Add(this.txtGiaNhap);
             this.cardInput.Controls.Add(this.flowLayoutPanelActions);
             this.cardInput.Controls.Add(this.txtSoLuong);
             this.cardInput.Controls.Add(this.lblSoLuong);
@@ -462,6 +466,38 @@
             this.txtTimKiem.Text = "";
             this.txtTimKiem.TrailingIcon = null;
             // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.AnimateReadOnly = false;
+            this.txtGiaNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGiaNhap.Depth = 0;
+            this.txtGiaNhap.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtGiaNhap.LeadingIcon = null;
+            this.txtGiaNhap.Location = new System.Drawing.Point(14, 352);
+            this.txtGiaNhap.MaxLength = 50;
+            this.txtGiaNhap.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtGiaNhap.Multiline = false;
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Size = new System.Drawing.Size(312, 50);
+            this.txtGiaNhap.TabIndex = 10;
+            this.txtGiaNhap.Text = "";
+            this.txtGiaNhap.TrailingIcon = null;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(14, 319);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.materialLabel1.Size = new System.Drawing.Size(71, 19);
+            this.materialLabel1.TabIndex = 11;
+            this.materialLabel1.Text = "Giá Nhập:";
+            // 
             // FrmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -510,5 +546,7 @@
         private MaterialSkin.Controls.MaterialButton btnTimKiem;
         private MaterialSkin.Controls.MaterialButton btnMain;
         private System.Windows.Forms.DataGridView dgvSanPham;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialTextBox txtGiaNhap;
     }
 }

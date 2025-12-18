@@ -34,7 +34,7 @@ namespace QUANLYShopDienThoai
             }
         }
 
-        public static void ExecuteNonQuery(string query, SqlParameter[] parameters = null)
+        public static bool ExecuteNonQuery(string query, SqlParameter[] parameters = null)
         {
             using (SqlConnection conn = new SqlConnection(strConnect))
             {
@@ -44,14 +44,18 @@ namespace QUANLYShopDienThoai
                     SqlCommand cmd = new SqlCommand(query, conn);
                     if (parameters != null)
                         cmd.Parameters.AddRange(parameters);
+
                     cmd.ExecuteNonQuery();
+                    return true; 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi thực thi: " + ex.Message);
+                    return false; 
                 }
             }
         }
+
 
         public static object ExecuteScalar(string query, SqlParameter[] parameters = null)
         {

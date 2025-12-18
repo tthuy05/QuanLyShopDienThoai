@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QUANLYShopDienThoai
@@ -26,57 +20,61 @@ namespace QUANLYShopDienThoai
 
         private void LoadData()
         {
-            try
-            {
-                string sql = "SELECT * FROM SAN_PHAM";
-                DataTable dt = DatabaseHelper.GetDataTable(sql);
-                dgvSanPham.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi kết nối CSDL: " + ex.Message);
-            }
+            string sql = "SELECT * FROM SAN_PHAM";
+            DataTable dt = DatabaseHelper.GetDataTable(sql);
+            dgvSanPham.DataSource = dt;
         }
 
         private void SetupInterface()
         {
-            if (dgvSanPham.Columns.Contains("GiaBan"))
-                dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Format = "N0";
-
             dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            if (dgvSanPham.Columns.Contains("TenSP")) dgvSanPham.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
-            if (dgvSanPham.Columns.Contains("GiaBan")) dgvSanPham.Columns["GiaBan"].HeaderText = "Giá Bán";
-            if (dgvSanPham.Columns.Contains("SoLuongTon")) dgvSanPham.Columns["SoLuongTon"].HeaderText = "Số Lượng";
-            if (dgvSanPham.Columns.Contains("HinhAnh")) dgvSanPham.Columns["HinhAnh"].Visible = false;
+
+            if (dgvSanPham.Columns.Contains("TenSP"))
+                dgvSanPham.Columns["TenSP"].HeaderText = "Tên sản phẩm";
+
+            if (dgvSanPham.Columns.Contains("GiaNhap"))
+            {
+                dgvSanPham.Columns["GiaNhap"].HeaderText = "Giá nhập";
+                dgvSanPham.Columns["GiaNhap"].DefaultCellStyle.Format = "N0";
+            }
+
+            if (dgvSanPham.Columns.Contains("GiaBan"))
+            {
+                dgvSanPham.Columns["GiaBan"].HeaderText = "Giá bán";
+                dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Format = "N0";
+            }
+
+            if (dgvSanPham.Columns.Contains("SoLuongTon"))
+                dgvSanPham.Columns["SoLuongTon"].HeaderText = "Số lượng";
 
             txtMaSP.ReadOnly = true;
+            btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
         }
 
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvSanPham.Rows[e.RowIndex];
+            if (e.RowIndex < 0) return;
 
-                txtMaSP.Text = row.Cells["MaSP"].Value.ToString();
-                txtTenSP.Text = row.Cells["TenSP"].Value.ToString();
-                string gia = row.Cells["GiaBan"].Value.ToString();
-                txtGiaBan.Text = gia.Replace(",", "").Replace(".", "").Replace(" ", "");
+            DataGridViewRow row = dgvSanPham.Rows[e.RowIndex];
 
-                txtSoLuong.Text = row.Cells["SoLuongTon"].Value.ToString();
-                btnThem.Enabled = false;
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;
-            }
+            txtMaSP.Text = row.Cells["MaSP"].Value.ToString();
+            txtTenSP.Text = row.Cells["TenSP"].Value.ToString();
+            txtGiaNhap.Text = row.Cells["GiaNhap"].Value.ToString();
+            txtGiaBan.Text = row.Cells["GiaBan"].Value.ToString();
+            txtSoLuong.Text = row.Cells["SoLuongTon"].Value.ToString();
+
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
 
-        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtMaSP.Clear();
             txtTenSP.Clear();
+            txtGiaNhap.Clear();
             txtGiaBan.Clear();
             txtSoLuong.Clear();
             txtTimKiem.Clear();
@@ -86,101 +84,89 @@ namespace QUANLYShopDienThoai
             btnXoa.Enabled = false;
 
             LoadData();
-            txtTenSP.Focus();
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTenSP.Text) || string.IsNullOrEmpty(txtGiaBan.Text))
+            if (txtTenSP.Text == "" || txtGiaNhap.Text == "" || txtGiaBan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Tên và Giá sản phẩm!");
+                MessageBox.Show("Thiếu dữ liệu bắt buộc");
                 return;
             }
 
-            try
+            string sql = @"INSERT INTO SAN_PHAM (TenSP, GiaNhap, GiaBan, SoLuongTon)
+                   VALUES (@Ten, @GiaNhap, @GiaBan, @SL)";
+
+            SqlParameter[] p =
             {
-                string sql = "INSERT INTO SAN_PHAM (TenSP, GiaBan, SoLuongTon) VALUES (@Ten, @Gia, @SL)";
+        new SqlParameter("@Ten", txtTenSP.Text),
+        new SqlParameter("@GiaNhap", decimal.Parse(txtGiaNhap.Text)),
+        new SqlParameter("@GiaBan", decimal.Parse(txtGiaBan.Text)),
+        new SqlParameter("@SL", int.Parse(txtSoLuong.Text))
+    };
 
-                SqlParameter[] p = {
-                    new SqlParameter("@Ten", txtTenSP.Text),
-                    new SqlParameter("@Gia", decimal.Parse(txtGiaBan.Text)),
-                    new SqlParameter("@SL", int.Parse(txtSoLuong.Text))
-                };
+            bool ketQua = DatabaseHelper.ExecuteNonQuery(sql, p);
 
-                DatabaseHelper.ExecuteNonQuery(sql, p);
-                MessageBox.Show("Thêm thành công!");
+            if (ketQua)
+            {
+                MessageBox.Show("Thêm sản phẩm thành công");
                 btnLamMoi_Click(sender, e);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi thêm: " + ex.Message);
+                MessageBox.Show("Thêm sản phẩm thất bại");
             }
         }
+
+
+
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtMaSP.Text == "")
-            {
-                MessageBox.Show("Vui lòng chọn sản phẩm cần sửa!");
-                return;
-            }
+            if (txtMaSP.Text == "") return;
 
-            try
-            {
-                string sql = "UPDATE SAN_PHAM SET TenSP=@Ten, GiaBan=@Gia, SoLuongTon=@SL WHERE MaSP=@ID";
+            string sql = @"UPDATE SAN_PHAM
+                           SET TenSP=@Ten, GiaNhap=@GiaNhap, GiaBan=@GiaBan, SoLuongTon=@SL
+                           WHERE MaSP=@ID";
 
-                SqlParameter[] p = {
-                    new SqlParameter("@Ten", txtTenSP.Text),
-                    new SqlParameter("@Gia", decimal.Parse(txtGiaBan.Text)),
-                    new SqlParameter("@SL", int.Parse(txtSoLuong.Text)),
-                    new SqlParameter("@ID", txtMaSP.Text)
-                };
-
-                DatabaseHelper.ExecuteNonQuery(sql, p);
-                MessageBox.Show("Cập nhật thành công!");
-                btnLamMoi_Click(sender, e);
-            }
-            catch (Exception ex)
+            SqlParameter[] p =
             {
-                MessageBox.Show("Lỗi sửa: " + ex.Message);
-            }
+                new SqlParameter("@Ten", txtTenSP.Text),
+                new SqlParameter("@GiaNhap", decimal.Parse(txtGiaNhap.Text)),
+                new SqlParameter("@GiaBan", decimal.Parse(txtGiaBan.Text)),
+                new SqlParameter("@SL", int.Parse(txtSoLuong.Text)),
+                new SqlParameter("@ID", txtMaSP.Text)
+            };
+
+            DatabaseHelper.ExecuteNonQuery(sql, p);
+            btnLamMoi_Click(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (txtMaSP.Text == "") return;
 
-            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                try
-                {
-                    string sql = "DELETE FROM SAN_PHAM WHERE MaSP=@ID";
-                    SqlParameter[] p = { new SqlParameter("@ID", txtMaSP.Text) };
-                    DatabaseHelper.ExecuteNonQuery(sql, p);
-                    MessageBox.Show("Đã xóa!");
-                    btnLamMoi_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi xóa: " + ex.Message);
-                }
-            }
+            string sql = "DELETE FROM SAN_PHAM WHERE MaSP=@ID";
+            SqlParameter[] p = { new SqlParameter("@ID", txtMaSP.Text) };
+
+            DatabaseHelper.ExecuteNonQuery(sql, p);
+            btnLamMoi_Click(sender, e);
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
             string tuKhoa = txtTimKiem.Text.Trim();
             string sql = $"SELECT * FROM SAN_PHAM WHERE TenSP LIKE N'%{tuKhoa}%'";
-            DataTable dt = DatabaseHelper.GetDataTable(sql);
-            dgvSanPham.DataSource = dt;
+            dgvSanPham.DataSource = DatabaseHelper.GetDataTable(sql);
         }
+
 
         private void btnMain_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
-
-        private void materialLabel1_Click(object sender, EventArgs e)
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
     }
+
 }
