@@ -16,18 +16,17 @@ CREATE TABLE SAN_PHAM (
     MaSP INT IDENTITY PRIMARY KEY,
     TenSP NVARCHAR(200) NOT NULL,
     GiaBan DECIMAL(18,0) NOT NULL,
-    GiaNhap DECIMAL(18,0) NOT NULL,
+    GiaNhap DECIMAL(18,0) NOT NULL DEFAULT 0,
     SoLuongTon INT NOT NULL,
     CONSTRAINT CK_GiaBan CHECK (GiaBan > 0),
     CONSTRAINT CK_GiaNhap CHECK (GiaNhap >= 0),
     CONSTRAINT CK_SoLuongTon CHECK (SoLuongTon >= 0)
 );
-
 CREATE TABLE KHACH_HANG (
     MaKH INT IDENTITY PRIMARY KEY,
-    TenKH NVARCHAR(100),
+    TenKH NVARCHAR(100) NOT NULL,
     DiaChi NVARCHAR(200),
-    SDT VARCHAR(15) UNIQUE
+    SDT VARCHAR(15) UNIQUE NOT NULL
 );
 
 CREATE TABLE HOA_DON (
@@ -37,8 +36,8 @@ CREATE TABLE HOA_DON (
     NgayBan DATETIME NOT NULL DEFAULT GETDATE(),
     TongTien DECIMAL(18,0) NOT NULL,
     TrangThai NVARCHAR(20) NOT NULL DEFAULT N'Đã thanh toán',
-    FOREIGN KEY (MaNV) REFERENCES NHAN_VIEN(MaNV),
-    FOREIGN KEY (MaKH) REFERENCES KHACH_HANG(MaKH),
+    CONSTRAINT FK_HD_NV FOREIGN KEY (MaNV) REFERENCES NHAN_VIEN(MaNV),
+    CONSTRAINT FK_HD_KH FOREIGN KEY (MaKH) REFERENCES KHACH_HANG(MaKH),
     CONSTRAINT CK_TongTien CHECK (TongTien >= 0)
 );
 
@@ -48,13 +47,13 @@ CREATE TABLE CT_HOA_DON (
     MaSP INT NOT NULL,
     SoLuong INT NOT NULL,
     DonGia DECIMAL(18,0) NOT NULL,
-    FOREIGN KEY (MaHD) REFERENCES HOA_DON(MaHD),
-    FOREIGN KEY (MaSP) REFERENCES SAN_PHAM(MaSP),
+    CONSTRAINT FK_CTHD_HD FOREIGN KEY (MaHD) REFERENCES HOA_DON(MaHD),
+    CONSTRAINT FK_CTHD_SP FOREIGN KEY (MaSP) REFERENCES SAN_PHAM(MaSP),
     CONSTRAINT CK_SoLuongBan CHECK (SoLuong > 0),
     CONSTRAINT CK_DonGia CHECK (DonGia > 0)
 );
-
-CREATE TRIGGER TR_CTHD_TONKHO
+GO
+CREATE OR ALTER TRIGGER TR_CTHD_TONKHO
 ON CT_HOA_DON
 INSTEAD OF INSERT
 AS
@@ -74,14 +73,14 @@ BEGIN
     INSERT INTO CT_HOA_DON (MaHD, MaSP, SoLuong, DonGia)
     SELECT MaHD, MaSP, SoLuong, DonGia FROM inserted;
 
-    UPDATE SAN_PHAM
-    SET SoLuongTon = SoLuongTon - i.SoLuong
+    UPDATE sp
+    SET sp.SoLuongTon = sp.SoLuongTon - i.SoLuong
     FROM SAN_PHAM sp
     JOIN inserted i ON sp.MaSP = i.MaSP;
 END;
 GO
 
-CREATE VIEW VW_HOA_HONG_NHAN_VIEN
+CREATE OR ALTER VIEW VW_HOA_HONG_NHAN_VIEN
 AS
 SELECT
     nv.MaNV,
@@ -103,32 +102,33 @@ BEGIN
     SELECT 
         nv.MaNV,
         nv.TenNV,
-        3000000 AS LuongCoBan,
+        nv.LuongCoBan,
         ISNULL(SUM(ct.SoLuong * ct.DonGia) * 0.01, 0) AS HoaHong,
-        3000000 + ISNULL(SUM(ct.SoLuong * ct.DonGia) * 0.01, 0) AS TongLuong
+        nv.LuongCoBan + ISNULL(SUM(ct.SoLuong * ct.DonGia) * 0.01, 0) AS TongLuong
     FROM NHAN_VIEN nv
     LEFT JOIN HOA_DON hd 
         ON nv.MaNV = hd.MaNV
         AND MONTH(hd.NgayBan) = @Thang
         AND YEAR(hd.NgayBan) = @Nam
+        AND hd.TrangThai = N'Đã thanh toán'
     LEFT JOIN CT_HOA_DON ct 
         ON hd.MaHD = ct.MaHD
-    GROUP BY nv.MaNV, nv.TenNV
-END
+    GROUP BY nv.MaNV, nv.TenNV, nv.LuongCoBan;
+END;
 GO
-
 
 CREATE INDEX IDX_HD_NgayBan ON HOA_DON(NgayBan);
 CREATE INDEX IDX_HD_MaNV ON HOA_DON(MaNV);
 CREATE INDEX IDX_CTHD_MaHD ON CT_HOA_DON(MaHD);
 CREATE INDEX IDX_CTHD_MaSP ON CT_HOA_DON(MaSP);
+GO
 
 INSERT INTO NHAN_VIEN (TenNV, TaiKhoan, MatKhau, ChucVu) VALUES
 (N'Nguyễn Đẩu Thủy','admin','123','Admin'),
 (N'Đỗ Đình Độ','nv1','123','NhanVien'),
 (N'Hồ Quốc Nam','nv2','123','NhanVien');
 
-INSERT INTO SAN_PHAM VALUES
+INSERT INTO SAN_PHAM (TenSP, GiaBan, GiaNhap, SoLuongTon) VALUES
 (N'iPhone 15 Pro Max 256GB',30000000,25000000,15),
 (N'iPhone 14 Pro 128GB',22000000,19000000,20),
 (N'Samsung Galaxy S24 Ultra',25000000,22000000,10),
@@ -145,10 +145,10 @@ INSERT INTO KHACH_HANG (TenKH, DiaChi, SDT) VALUES
 (N'Trần Nhật Minh', N'Quận 3, TP.HCM', '0909123456'),
 (N'Lý Bảo Anh', N'Quận 10, TP.HCM', '0934567890'),
 (N'Huỳnh Tấn Phát', N'Quận 10, TP.HCM', '0915224466'),
-(N'Ngô Đăng Khoa', N'Quận 1, TP.HCM', '00778899');
-INSERT INTO KHACH_HANG (TenKH, DiaChi, SDT) 
-VALUES (N'Khách lẻ', N'Tại cửa hàng', '0000000000');
---DROP PROCEDURE SP_TINH_LUONG_NHAN_VIEN;
-EXEC SP_TINH_LUONG_NHAN_VIEN 12, 2025
+(N'Ngô Đăng Khoa', N'Quận 1, TP.HCM', '00778899'),
+(N'Khách lẻ', N'Tại cửa hàng', '0000000000');
+GO
 
-
+EXEC SP_TINH_LUONG_NHAN_VIEN 12, 2025;
+select*from SAN_PHAM
+select*from CT_HOA_DON

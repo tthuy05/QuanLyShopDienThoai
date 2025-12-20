@@ -13,7 +13,7 @@ namespace QUANLYShopDienThoai
         public FrmSanPhamNoiBat()
         {
             InitializeComponent();
-
+            dtpTuNgay.MaxDate = DateTime.Today;
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;

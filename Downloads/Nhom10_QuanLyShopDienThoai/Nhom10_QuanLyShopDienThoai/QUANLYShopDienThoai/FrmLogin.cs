@@ -29,7 +29,6 @@ namespace QUANLYShopDienThoai
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            // Nếu cần khởi tạo gì khi form load thì viết ở đây
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

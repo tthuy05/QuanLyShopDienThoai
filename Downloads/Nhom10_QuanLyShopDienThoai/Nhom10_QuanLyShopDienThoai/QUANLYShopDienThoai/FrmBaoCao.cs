@@ -14,6 +14,8 @@ namespace QUANLYShopDienThoai
         private void FrmBaoCao_Load(object sender, EventArgs e)
         {
             this.Text = "BÁO CÁO DOANH THU & LỢI NHUẬN";
+            dtpTuNgay.MaxDate = DateTime.Today;
+            dtpDenNgay.MaxDate = DateTime.Today;
             dtpTuNgay.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dtpDenNgay.Value = DateTime.Today;
         }

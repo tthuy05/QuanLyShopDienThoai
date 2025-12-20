@@ -57,13 +57,13 @@
             legend1.Name = "Legend1";
             this.chartSanPham.Legends.Add(legend1);
             this.chartSanPham.Location = new System.Drawing.Point(24, 143);
-            this.chartSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.chartSanPham.Name = "chartSanPham";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartSanPham.Series.Add(series1);
-            this.chartSanPham.Size = new System.Drawing.Size(676, 386);
+            this.chartSanPham.Size = new System.Drawing.Size(616, 386);
             this.chartSanPham.TabIndex = 0;
             this.chartSanPham.Text = "chart1";
             // 
@@ -71,7 +71,7 @@
             // 
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTuNgay.Location = new System.Drawing.Point(113, 105);
-            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTuNgay.Name = "dtpTuNgay";
             this.dtpTuNgay.Size = new System.Drawing.Size(159, 22);
             this.dtpTuNgay.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDenNgay.Location = new System.Drawing.Point(393, 105);
-            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(159, 22);
             this.dtpDenNgay.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.ForeColor = System.Drawing.Color.White;
             this.btnXem.Location = new System.Drawing.Point(587, 98);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(4);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(133, 37);
             this.btnXem.TabIndex = 3;
@@ -126,14 +126,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 554);
+            this.ClientSize = new System.Drawing.Size(959, 554);
             this.Controls.Add(this.lblDenNgay);
             this.Controls.Add(this.lblTuNgay);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.dtpTuNgay);
             this.Controls.Add(this.chartSanPham);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSanPhamNoiBat";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Thống Kê Sản Phẩm Bán Chạy";

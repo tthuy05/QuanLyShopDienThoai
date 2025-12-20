@@ -16,6 +16,10 @@ namespace QUANLYShopDienThoai
         {
             LoadData();
             SetupInterface();
+
+            txtGiaNhap.KeyPress += ChiNhapSo_KeyPress;
+            txtGiaBan.KeyPress += ChiNhapSo_KeyPress;
+            txtSoLuong.KeyPress += ChiNhapSo_KeyPress;
         }
 
         private void LoadData()
@@ -88,22 +92,22 @@ namespace QUANLYShopDienThoai
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtTenSP.Text == "" || txtGiaNhap.Text == "" || txtGiaBan.Text == "")
+            if (txtTenSP.Text == "" || txtGiaNhap.Text == "" || txtGiaBan.Text == "" || txtSoLuong.Text == "")
             {
                 MessageBox.Show("Thiếu dữ liệu bắt buộc");
                 return;
             }
 
             string sql = @"INSERT INTO SAN_PHAM (TenSP, GiaNhap, GiaBan, SoLuongTon)
-                   VALUES (@Ten, @GiaNhap, @GiaBan, @SL)";
+                           VALUES (@Ten, @GiaNhap, @GiaBan, @SL)";
 
             SqlParameter[] p =
             {
-        new SqlParameter("@Ten", txtTenSP.Text),
-        new SqlParameter("@GiaNhap", decimal.Parse(txtGiaNhap.Text)),
-        new SqlParameter("@GiaBan", decimal.Parse(txtGiaBan.Text)),
-        new SqlParameter("@SL", int.Parse(txtSoLuong.Text))
-    };
+                new SqlParameter("@Ten", txtTenSP.Text),
+                new SqlParameter("@GiaNhap", decimal.Parse(txtGiaNhap.Text)),
+                new SqlParameter("@GiaBan", decimal.Parse(txtGiaBan.Text)),
+                new SqlParameter("@SL", int.Parse(txtSoLuong.Text))
+            };
 
             bool ketQua = DatabaseHelper.ExecuteNonQuery(sql, p);
 
@@ -117,8 +121,6 @@ namespace QUANLYShopDienThoai
                 MessageBox.Show("Thêm sản phẩm thất bại");
             }
         }
-
-
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -137,8 +139,17 @@ namespace QUANLYShopDienThoai
                 new SqlParameter("@ID", txtMaSP.Text)
             };
 
-            DatabaseHelper.ExecuteNonQuery(sql, p);
-            btnLamMoi_Click(sender, e);
+            bool ketQua = DatabaseHelper.ExecuteNonQuery(sql, p);
+
+            if (ketQua)
+            {
+                MessageBox.Show("Cập nhật sản phẩm thành công");
+                btnLamMoi_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật sản phẩm thất bại");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -148,8 +159,17 @@ namespace QUANLYShopDienThoai
             string sql = "DELETE FROM SAN_PHAM WHERE MaSP=@ID";
             SqlParameter[] p = { new SqlParameter("@ID", txtMaSP.Text) };
 
-            DatabaseHelper.ExecuteNonQuery(sql, p);
-            btnLamMoi_Click(sender, e);
+            bool ketQua = DatabaseHelper.ExecuteNonQuery(sql, p);
+
+            if (ketQua)
+            {
+                MessageBox.Show("Xóa sản phẩm thành công");
+                btnLamMoi_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Xóa sản phẩm thất bại");
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -159,14 +179,19 @@ namespace QUANLYShopDienThoai
             dgvSanPham.DataSource = DatabaseHelper.GetDataTable(sql);
         }
 
-
         private void btnMain_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-    }
 
+        private void ChiNhapSo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar)) return;
+            if (!char.IsDigit(e.KeyChar)) e.Handled = true;
+        }
+    }
 }
